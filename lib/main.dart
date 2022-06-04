@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'custom_card_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,34 +47,8 @@ class MyApp extends StatelessWidget {
                       letterSpacing: 2.5,
                       fontWeight: FontWeight.bold),
                 ),
-                Card(
-                  color: Colors.white,
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 10.0, horizontal: 25.0),
-                  child: ListTile(
-                    leading: const Icon(Icons.phone, color: Colors.deepPurple),
-                    title: Text(
-                      '+1 999 999 9999',
-                      style: TextStyle(color: Colors.deepPurple.shade900),
-                    ),
-                  ),
-                ),
-                Card(
-                    color: Colors.white,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 25.0),
-                    child: ListTile(
-                        leading: const Icon(
-                          Icons.email,
-                          color: Colors.deepPurple,
-                        ),
-                        title: Text(
-                          'karlurbarn@example.com',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.deepPurple.shade900,
-                              fontFamily: 'SourceSansPro'),
-                        )))
+                const CustomCardWidget(email: Icons.phone, label: '+1 999 999 9999'),
+                const CustomCardWidget(email: Icons.email, label: 'karlurbarn@example.com')
               ],
             ),
           ),
