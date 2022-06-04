@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CircleAvatar(
                 radius: 50.0,
@@ -26,6 +27,13 @@ class MyApp extends StatelessWidget {
                       fontSize: 40.0,
                       color: Colors.white,
                       fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 20,
+                width: 300,
+                child: Divider(
+                  color: Colors.deepPurple.shade100,
+                ),
+              ),
               Text(
                 'FLUTTER DEVELOPER',
                 style: TextStyle(
@@ -35,41 +43,35 @@ class MyApp extends StatelessWidget {
                     letterSpacing: 2.5,
                     fontWeight: FontWeight.bold),
               ),
-              Container(
+              Card(
                 color: Colors.white,
-                padding: const EdgeInsets.all(10),
-                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: [
-                    const Icon(Icons.phone, color: Colors.deepPurple),
-                    const SizedBox(width: 10.0),
-                    Text('+1 999 999 9999',
-                      style: TextStyle(
-                        color: Colors.deepPurple.shade900
-                      ),
-                    )
-                  ],
+                margin: const EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: const Icon(Icons.phone, color: Colors.deepPurple),
+                  title: Text(
+                    '+1 999 999 9999',
+                    style: TextStyle(color: Colors.deepPurple.shade900),
+                  ),
                 ),
               ),
-              Container(
-                color: Colors.white,
-                padding: const EdgeInsets.all(10.0),
-                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: [
-                    const Icon(Icons.email, color: Colors.deepPurple,),
-                    const SizedBox(width: 10.0),
-                    Text(
-                      'karlurbarn@example.com',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.deepPurple.shade900,
-                        fontFamily: 'SourceSansPro'
+              Card(
+                  color: Colors.white,
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 25.0),
+                  child: ListTile(
+                      leading: const Icon(
+                        Icons.email,
+                        color: Colors.deepPurple,
                       ),
-                    )
-                  ],
-                ),
-              )
+                      title: Text(
+                        'karlurbarn@example.com',
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.deepPurple.shade900,
+                            fontFamily: 'SourceSansPro'),
+                      ))
+                  )
             ],
           ),
         ),
